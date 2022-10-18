@@ -148,7 +148,7 @@ Sector2:AddDropdown("auto farm mode",{
 },"",false,function(t)
 
 end)
-Sector2:AddToggle("Auto Farm gold⛵",false,function(t)
+Sector2:AddToggle("Teleport Teams",false,function(t)
 if t == true then
 print("true")
 end
