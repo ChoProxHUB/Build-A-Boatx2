@@ -379,3 +379,17 @@ workspace.ItemBoughtFromShop:InvokeServer(unpack(args))
 end)
 --_G.B = false
 print("hi")
+-- TAD 2
+function WoodBlock()
+local args = {
+    [1] = "WoodBlock",
+    [2] = 1
+}
+
+workspace.ItemBoughtFromShop:InvokeServer(unpack(args))
+end	
+local Tab = CenterHubNo1:CreateTab("Buy")
+local Sector1 = Tab:CreateSector("Buy Block","left")
+Sector1:AddButton("Buy Common Chest🟢",function()   
+WoodBlock()
+end)	
