@@ -1,3 +1,4 @@
+if _G.KEY == "CHOPRO" then
 ----------------------------------------------------------------------
 --timeAUtofarm
 local tf = 0
@@ -392,4 +393,5 @@ local Tab = CenterHubNo1:CreateTab("Buy")
 local Sector1 = Tab:CreateSector("Buy Block","left")
 Sector1:AddButton("Buy Common Chest🟢",function()   
 WoodBlock()
-end)	
+end)
+end
