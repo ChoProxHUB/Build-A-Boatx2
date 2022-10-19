@@ -86,7 +86,7 @@ end
 	local Sector2 = Tab:CreateSector("Teleport","left") --right
 	local Sector3 = Tab:CreateSector("Buy Chest","right")
     Sector1:AddLabel("Farm ")
-    Sector1:AddToggle("Auto Farm gold⛵",false,function(t)
+    Sector1:AddToggle("Auto Farm gold",false,function(t) --⛵
        _G.AUTOFARM = t
 if tf ~= 0 and timeZ ~= 0 then	   
 	   while _G.AUTOFARM do
