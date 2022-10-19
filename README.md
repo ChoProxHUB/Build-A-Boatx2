@@ -395,3 +395,4 @@ Sector1:AddButton("Buy Common Chest🟢",function()
 WoodBlock()
 end)	
 end
+
