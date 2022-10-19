@@ -1,5 +1,4 @@
 if _G.KEY == "CHOPRO" then
-----------------------------------------------------------------------
 --timeAUtofarm
 local tf = 0
 local timeZ = 0
