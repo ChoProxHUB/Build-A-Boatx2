@@ -1,11 +1,24 @@
+----------------------------------------------------------------------
+--timeAUtofarm
 local tf = 0
 local timeZ = 0
 local Farmv2 = false
+--Chest
 local CommonChest = false
 local UncommonChest = false
 local RareChest = false
 local EpicChest = false
 local LegendaryChest = false
+--Teams
+local BlackTeam = false
+local BlueTeam  = false 
+local GreenTeam = false   
+local MagentaTeam = false 
+local RedTeam = false    
+local WhiteTeam = false
+local YellowTeam = false
+--Teleport
+local Teleport = Game.Players.LocalPlayer.Character.HumanoidRootPart
 function CommonChest()
 local args = {
     [1] = "Common Chest",
@@ -126,16 +139,16 @@ print(t)
 tf = 15
 timeZ = 16
 end	
-if t == "mode slow" then
+ if t == "mode slow" then
 print(t)
 tf = 25
 timeZ = 26
-end	
-if t == "Auto farmV2" then
+ end	
+ if t == "Auto farmV2" then
 Farmv2 = true
 tf = 0
 timeZ = 0
-end
+ end
 end)
 Sector2:AddDropdown("auto farm mode",{
 "Black Team   ⬛",
@@ -146,14 +159,103 @@ Sector2:AddDropdown("auto farm mode",{
 "White Team   ⬜",
 "Yellow Team  🟨",
 },"",false,function(t)
-
-end)
-Sector2:AddToggle("Teleport Teams",false,function(t)
-if t == true then
-print("true")
+if t == "Black Team   ⬛" then
+ BlackTeam = true
+ BlueTeam  = false 
+ GreenTeam = false   
+ MagentaTeam = false 
+ RedTeam = false    
+ WhiteTeam = false
+  YellowTeam = false
 end
+if t == "Blue Team    🟦" then
+BlackTeam = false
+ BlueTeam  = true 
+ GreenTeam = false   
+ MagentaTeam = false 
+ RedTeam = false    
+ WhiteTeam = false
+  YellowTeam = false
+end
+if t == "Green Team   🟩" then
+BlackTeam = false
+ BlueTeam  = false 
+ GreenTeam = true  
+ MagentaTeam = false 
+ RedTeam = false    
+ WhiteTeam = false
+  YellowTeam = false
+end
+if t == "Magenta Team 🟪" then
+BlackTeam = false
+ BlueTeam  = false 
+ GreenTeam = false   
+ MagentaTeam = true
+ RedTeam = false    
+ WhiteTeam = false
+  YellowTeam = false
+end	
+if t == "Red Team     🟥" then
+BlackTeam = false
+ BlueTeam  = false 
+ GreenTeam = false   
+ MagentaTeam = false 
+ RedTeam = true 
+ WhiteTeam = false
+  YellowTeam = false
+end
+if t == "White Team   ⬜" then
+BlackTeam = false
+ BlueTeam  = false 
+ GreenTeam = false   
+ MagentaTeam = false 
+ RedTeam = false    
+ WhiteTeam = true
+  YellowTeam = false
+end
+if t == "Yellow Team  🟨" then
+BlackTeam = false
+ BlueTeam  = false 
+ GreenTeam = false   
+ MagentaTeam = false 
+ RedTeam = false    
+ WhiteTeam = false
+  YellowTeam = true
+end
+end)
+_G.TP = true
+ Sector2:AddToggle("Teleport Teams",false,function(t)
+ if t == true then
+	 _G.TP = true
+   while _G.TP do
+	 wait("0.1")
+	 print("do")
+     if BlackTeam == true then
+      Teleport.CFrame = CFrame.new(-479.183594, -9.35057735, -69.5191345, 0.0191004109, 0.0480180942, -0.998663843, 8.59629257e-09, 0.998846054, 0.048026856, 0.99981755, -0.000917341269, 0.0190783702)
+      end
+	  if BlueTeam == true then
+      Teleport.CFrame = CFrame.new(371.556, -9.78000164, 299.929535, 0.0484575145, -4.20890123e-09, 0.998825252, -2.11321289e-08, 1, 5.23906651e-09, -0.998825252, -2.13611759e-08, 0.0484575145)
+	   end 
+	   if GreenTeam == true then
+	   Teleport.CFrame = CFrame.new(-479.034119, -9.74000263, 294.020416, 0.016509505, 5.1710586e-08, -0.999863684, 1.7944769e-09, 1, 5.17472643e-08, 0.999863684, -2.64855404e-09, 0.016509505)  
+	   end
+	   if MagentaTeam == true then
+       Teleport.CFrame = CFrame.new(370.649811, -9.89999676, 646.890808, -0.0276095718, -7.04997234e-08, 0.999618769, 9.30200805e-09, 1, 7.07835284e-08, -0.999618769, 1.12527649e-08, -0.0276095718)
+	   end
+	   if RedTeam == true then
+	   Teleport.CFrame = CFrame.new(371.780914, -9.78000164, -64.3214493, 0.0582691319, -4.38945698e-08, 0.99830091, 8.79327056e-10, 1, 4.39179537e-08, -0.99830091, -1.68122805e-09, 0.0582691319)
+	   end
+	  if WhiteTeam == true then
+	   Teleport.CFrame = CFrame.new(-49.1447296, -9.81999874, -494.950012, -0.999949396, 2.60278412e-08, 0.010057237, 2.68992757e-08, 1, 8.65122658e-08, -0.010057237, 8.6778428e-08, -0.999949396)
+	  end
+	   if YellowTeam == true then
+	   Teleport.CFrame = CFrame.new(-478.062744, -9.85999584, 639.235229, -0.0173586681, -1.61047122e-08, -0.999849319, -1.2159628e-08, 1, -1.58960329e-08, 0.999849319, 1.18818617e-08, -0.0173586681)
+	   end 	 	 	  	    	
+   end
+ end
 if t == false then
-print("false")
+_G.TP = false
+wait("0.1")
 end
 end)
 Sector3:AddButton("Buy Common Chest🟢",function()   
